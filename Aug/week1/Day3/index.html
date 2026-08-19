@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <base href="https://www.flipkart.com/">
+  </head>
+  <body>
+    <!-- list in html -->
+    <!-- order list -->
+    <!-- type : 1 ,A , a ,i ,I -->
+    <ol type="I">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ol>
+    <!-- unorder list -->
+    <!-- type : disc , circle , square , none -->
+    <ul type="none">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+
+    <!-- description list -->
+    <dl>
+      <dt>Dog</dt>
+      <dd>this is dog</dd>
+      <dt>Cow</dt>
+      <dd>this is domestic animal</dd>
+    </dl>
+
+    <!-- nexted list -->
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>
+        <ul>
+          <li>item 3.1</li>
+          <li>item 3.2</li>
+          <li>
+            <ol>
+              <li>item 3.3.1</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Table -->
+    <table border="1">
+        <caption>this is my table</caption>
+      <colgroup>
+        <col style="background-color: red;">
+        <col style="background-color: blue;" span="2">
+        <!-- <col> -->
+    </colgroup>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <!--colspan-->
+          <th>Age</th>
+          <th>email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>st1</td>
+          <!--row span-->
+          <td>20</td>
+          <td>std1@gmail.com</td>
+        </tr>
+
+        <tr>
+          <td>std2</td>
+          <td>30</td>
+          <td>std2@gmail.com</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>std3</td>
+          <td>32</td>
+          <td>std3@gmail.com</td>
+        </tr>
+      </tfoot>
+    </table>
+
+
+    <!-- anchor tag -->
+     <a href="login" target="_blank">Click Here go to flipkart login page</a>
+     <a href="helpcentre">Click Here go to flipkart help center page</a>
+  </body>
+  </head>
+</html>
