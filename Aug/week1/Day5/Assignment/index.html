@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Task of HTML</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: "Times New Roman", serif;
+            color: #111;
+        }
+
+        .page {
+            width: 680px;
+            min-height: 1000px;
+            margin: 0 auto;
+            padding: 0 30px 40px 30px;
+            border-left: 1px dashed #777;
+            border-right: 1px dashed #777;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 27px;
+            margin: 0 0 25px 0;
+            padding-top: 2px;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin: 0 0 18px 28px;
+        }
+
+        .task {
+            font-size: 16px;
+            margin-left: 28px;
+            margin-bottom: 14px;
+        }
+
+        .task-number {
+            font-weight: bold;
+        }
+
+        /* Chemical equation box */
+        .equation-box {
+            width: 235px;
+            height: 72px;
+            border: 1px solid #555;
+            margin-left: 48px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .chemical-equation {
+            font-size: 19px;
+            white-space: nowrap;
+        }
+
+        /* Algebra section */
+        .algebra-box {
+            width: 270px;
+            min-height: 300px;
+            border: 1px solid #555;
+            margin-left: 54px;
+            margin-top: 8px;
+            padding: 7px 10px 15px 17px;
+            box-sizing: border-box;
+        }
+
+        .algebra-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .formula {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 11px 0;
+            line-height: 1.3;
+        }
+
+        sup {
+            font-size: 11px;
+            vertical-align: super;
+        }
+
+        sub {
+            font-size: 11px;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>Practice Task of HTML</h1>
+
+        <h2>Day 1</h2>
+
+        <div class="task">
+            <span class="task-number">1.1</span>
+            Insert minimum 15 image in HTML Page with it's Different
+            attributes (Height, width, title, alt etc.).
+        </div>
+
+        <div class="task">
+            <span class="task-number">1.2</span>
+            Write the following equation on webpage by using HTML.
+        </div>
+
+        <div class="equation-box">
+            <div class="chemical-equation">
+                2 H<sub>2</sub>O<sub>(l)</sub>
+                → 2 H<sub>2</sub><sub>(g)</sub>
+                + O<sub>2</sub><sub>(g)</sub>
+            </div>
+        </div>
+
+        <div class="task" style="margin-top: 14px;">
+            <span class="task-number">1.3</span>
+            Write the following algebric equation as follows.
+        </div>
+
+        <div class="algebra-box">
+
+            <div class="algebra-title">Expansions</div>
+
+            <div class="formula">
+                1) a<sup>2</sup> - b<sup>2</sup>
+                = (a + b)(a - b)
+            </div>
+
+            <div class="formula">
+                2) (a + b)<sup>2</sup>
+                = a<sup>2</sup> + 2ab + b<sup>2</sup>
+            </div>
+
+            <div class="formula">
+                3) (a - b)<sup>2</sup>
+                = a<sup>2</sup> - 2ab + b<sup>2</sup>
+            </div>
+
+            <div class="formula">
+                4) a<sup>3</sup> + b<sup>3</sup>
+                = (a + b)(a<sup>2</sup> - ab + b<sup>2</sup>)
+            </div>
+
+            <div class="formula">
+                5) a<sup>3</sup> - b<sup>3</sup>
+                = (a - b)(a<sup>2</sup> + ab + b<sup>2</sup>)
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
