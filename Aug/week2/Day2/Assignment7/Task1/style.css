@@ -1,0 +1,22 @@
+h2{
+    color: red;
+}
+
+u{
+    color: green;
+}
+
+td {
+    padding: 5px 5px;
+    height: 20px;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #333333;
+    color: white;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: white;
+    color: #292929;
+}

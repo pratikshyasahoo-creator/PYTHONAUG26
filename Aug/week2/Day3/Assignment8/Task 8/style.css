@@ -1,0 +1,26 @@
+.card {
+  width: 296px;
+  background: white;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.card-image {
+  height: 175px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #a4e1bd;
+}
+.image-placeholder {
+  font-size: 35px;
+  color: #4d8065;
+}
+.card-content {
+  padding: 15px 17px 11px;
+}
+

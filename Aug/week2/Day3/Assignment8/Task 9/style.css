@@ -1,0 +1,24 @@
+.cards {
+  display: flex;
+  gap: 24px;
+  width: 1200px;
+  margin: 108px auto 0;
+}
+
+.card {
+  width: 415px;
+  height: 300px;
+  padding: 58px 38px;
+  background: #e9e5ff;
+  border-radius: 11px;
+}
+
+.card h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 20px;
+  line-height: 1.52;
+}
