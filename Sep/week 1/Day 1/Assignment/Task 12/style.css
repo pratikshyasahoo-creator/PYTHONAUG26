@@ -58,7 +58,7 @@
     margin-bottom: 50px;
 }
 
-/* INPUTS */
+
 
 form input[type="email"],
 .password-box input {
@@ -93,7 +93,7 @@ form input::placeholder {
     cursor: pointer;
 }
 
-/* OPTIONS */
+
 
 .options {
     display: flex;
@@ -122,7 +122,7 @@ form input::placeholder {
     text-decoration: none;
 }
 
-/* LOGIN BUTTON */
+
 
 form button {
     width: 100%;
@@ -143,7 +143,7 @@ form button:hover {
     background: #8bce2e;
 }
 
-/* OR */
+
 
 .or {
     text-align: center;
@@ -151,7 +151,7 @@ form button:hover {
     margin: 18px 0;
 }
 
-/* GOOGLE BUTTON */
+
 
 .google-btn {
     width: 100%;
@@ -173,7 +173,6 @@ form button:hover {
     margin-right: 8px;
 }
 
-/* SIGN UP */
 
 .signup {
     text-align: center;
