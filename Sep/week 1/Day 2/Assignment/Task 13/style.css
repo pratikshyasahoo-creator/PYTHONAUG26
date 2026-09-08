@@ -1,0 +1,841 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #151942;
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+.navbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+
+    background: #f7f7fc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #4d4aa3;
+
+    width: 35%;
+}
+
+.logo-icon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 32px;
+
+    font-size: 11px;
+
+    width: 40%;
+}
+
+.nav-links a {
+    color: #24264c;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #504ca5;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    width: 25%;
+
+    font-size: 11px;
+}
+
+.login {
+    color: white;
+}
+
+.signup {
+    border: 1px solid rgba(255,255,255,.5);
+
+    padding: 8px 18px;
+
+    border-radius: 5px;
+
+    color: white;
+}
+
+
+.hero {
+    min-height: 450px;
+
+    display: flex;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding-left: 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f7f7fc 0%,
+            #f7f7fc 67%,
+            #48459e 67%,
+            #48459e 100%
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 55%;
+    top: 80px;
+
+    width: 80px;
+    height: 50px;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 5px,
+            #f0a982 6px,
+            transparent 8px
+        );
+
+    opacity: .25;
+}
+
+
+.hero-content {
+    width: 50%;
+
+    padding-top: 75px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 31px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    color: #161a42;
+}
+
+.hero-content h1 span {
+    color: #f2a24e;
+}
+
+.hero-content h1 strong {
+    color: #514da4;
+}
+
+.hero-content p {
+    width: 470px;
+
+    margin-top: 17px;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    color: #85859a;
+}
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 24px;
+}
+
+.get-started {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 38px;
+
+    border-radius: 4px;
+
+    color: white;
+
+    background: #ffab4e;
+
+    font-size: 10px;
+
+    box-shadow: 0 7px 15px rgba(255, 171, 78, .2);
+}
+
+.watch-demo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 10px;
+
+    color: #4d4a9f;
+}
+
+.play-icon {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    color: #514da4;
+
+    font-size: 8px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+
+.hero-image {
+    width: 50%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-image > img {
+    width: 310px;
+    height: 390px;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    border-radius: 150px 150px 0 0;
+
+    filter: saturate(.85);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.floating-card {
+    position: absolute;
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    background: white;
+
+    border-radius: 4px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+    font-size: 8px;
+}
+
+.floating-card small {
+    display: block;
+
+    color: #8b8b9c;
+
+    font-size: 6px;
+}
+
+.floating-card b {
+    font-size: 7px;
+
+    color: #25264c;
+}
+
+.small-icon {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #4d4aa1;
+
+    background: #eeeefa;
+}
+
+.appointment {
+    left: 10%;
+    top: 230px;
+}
+
+.lab-test {
+    right: 4%;
+    top: 180px;
+}
+
+.mri {
+    right: 5%;
+    top: 270px;
+}
+
+.floating-circle {
+    position: absolute;
+
+    right: 10%;
+    top: 90px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 5px;
+
+    color: #f1a34d;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+
+    z-index: 4;
+}
+
+.categories {
+    padding: 38px 8% 25px;
+
+    background: white;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+
+    color: #161a42;
+}
+
+.slider-buttons {
+    display: flex;
+
+    gap: 8px;
+}
+
+.slider-buttons button {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #f0f0fa;
+
+    color: #4d4aa2;
+
+    cursor: pointer;
+}
+
+.slider-buttons button:last-child {
+    background: #4e4aa2;
+
+    color: white;
+}
+
+.category-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.category-card {
+    height: 82px;
+
+    border-radius: 4px;
+
+    background: #f8f8fc;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(70,68,150,.12);
+}
+
+.category-card.active {
+    background: #514da4;
+
+    color: white;
+
+    box-shadow: 0 15px 25px rgba(81,77,164,.28);
+}
+
+.category-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8e8f4;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+}
+
+.category-card p {
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    max-width: 100px;
+}
+
+
+.why-medkit {
+    min-height: 330px;
+
+    display: flex;
+
+    padding: 25px 8% 60px;
+
+    gap: 50px;
+}
+
+
+.why-image {
+    width: 43%;
+
+    min-height: 300px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.image-circle {
+    position: absolute;
+
+    bottom: -30px;
+    left: 45px;
+
+    width: 230px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #e7e7f5;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+.dot-pattern {
+    position: absolute;
+
+    left: 10px;
+    top: 55px;
+
+    width: 100px;
+    height: 130px;
+
+    background-image: radial-gradient(
+        #e6b06f 1.5px,
+        transparent 1.5px
+    );
+
+    background-size: 10px 10px;
+
+    opacity: .7;
+}
+
+.orange-dot {
+    position: absolute;
+
+    left: 30px;
+    top: 55px;
+
+    width: 5px;
+    height: 5px;
+
+    background: #f3a452;
+
+    border-radius: 50%;
+}
+
+.floating-health-card {
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 7px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+
+    font-size: 13px;
+}
+
+.card-one {
+    left: 30px;
+    top: 130px;
+}
+
+.card-two {
+    left: 240px;
+    top: 80px;
+}
+
+.card-three {
+    left: 245px;
+    top: 200px;
+}
+
+.why-content {
+    width: 52%;
+
+    padding-top: 15px;
+}
+
+.why-content h2 {
+    max-width: 370px;
+
+    font-size: 19px;
+
+    line-height: 1.45;
+
+    color: #15183d;
+}
+
+.why-content h2 span {
+    color: #f3a14d;
+}
+
+
+.feature {
+    margin-top: 17px;
+}
+
+.feature-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #27294d;
+}
+
+.feature-title span {
+    color: #504ca4;
+
+    font-size: 10px;
+}
+
+.feature p {
+    max-width: 420px;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    color: #88889a;
+}
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .logo {
+        width: 25%;
+    }
+
+    .nav-links {
+        width: 50%;
+        gap: 15px;
+    }
+
+    .nav-buttons {
+        width: 25%;
+    }
+
+    .hero {
+        padding-left: 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        width: 90%;
+    }
+
+    .hero-image > img {
+        width: 270px;
+    }
+
+    .why-medkit {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 6%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .nav-buttons {
+        width: 45%;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+
+    .hero {
+        min-height: auto;
+
+        flex-direction: column;
+
+        padding: 45px 6% 0;
+
+        background:
+            linear-gradient(
+                180deg,
+                #f7f7fc 0%,
+                #f7f7fc 65%,
+                #4d49a0 65%,
+                #4d49a0 100%
+            );
+    }
+
+    .hero-content {
+        width: 100%;
+
+        padding-top: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        width: 100%;
+
+        font-size: 10px;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        height: 380px;
+
+        margin-top: 20px;
+    }
+
+    .hero-image > img {
+        height: 350px;
+    }
+
+    .categories {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .why-medkit {
+        flex-direction: column;
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .why-image,
+    .why-content {
+        width: 100%;
+    }
+
+    .why-image {
+        height: 300px;
+    }
+
+    .why-content {
+        padding-top: 0;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .login,
+    .signup {
+        font-size: 9px;
+    }
+
+    .signup {
+        padding: 6px 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .category-card {
+        height: 100px;
+    }
+
+    .why-content h2 {
+        font-size: 18px;
+    }
+
+}
