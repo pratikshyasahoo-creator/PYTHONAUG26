@@ -121,3 +121,43 @@ switch (choice) {
     break;
   }
 }
+
+// Make a student grade system by using switch
+let Std_Mark = 79;
+
+switch (true) {
+  case (Std_Mark >= 90): {
+    console.log("Grade: O");
+    break;
+  }
+
+  case (Std_Mark >= 80): {
+    console.log("Grade: A");
+    break;
+  }
+
+  case (Std_Mark >= 70): {
+    console.log("Grade: B");
+    break;
+  }
+
+  case (Std_Mark >= 60): {
+    console.log("Grade: C");
+    break;
+  }
+
+  case (Std_Mark >= 50): {
+    console.log("Grade: D");
+    break;
+  }
+
+  case (Std_Mark >= 40): {
+    console.log("Grade: E");
+    break;
+  }
+
+  default: {
+    console.log("Fail");
+    break;
+  }
+}
