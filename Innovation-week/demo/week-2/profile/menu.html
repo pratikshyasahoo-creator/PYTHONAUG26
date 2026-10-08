@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Menu</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #071120;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .menu-app {
+
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            margin: auto;
+            background: white;
+
+        }
+
+        @media (min-width: 480px) {
+
+            .menu-app {
+                max-width: 480px;
+            }
+
+        }
+
+        @media (min-width: 640px) {
+
+            .menu-app {
+                max-width: 640px;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+
+            .menu-app {
+                max-width: 768px;
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+
+            .menu-app {
+                max-width: 1000px;
+            }
+
+        }
+
+        @media (min-width: 1280px) {
+
+            .menu-app {
+                max-width: 1200px;
+            }
+
+        }
+
+        .category-btn {
+            transition: 0.2s;
+        }
+
+        .category-btn.active {
+            background: #e31837;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="menu-app">
+
+
+    <!-- HEADER -->
+
+    <header class="
+        h-[65px]
+        bg-[#071120]
+        text-white
+        flex
+        items-center
+        px-5
+        gap-4
+    ">
+
+        <button
+            onclick="goBack()"
+            class="text-2xl">
+
+            ←
+
+        </button>
+
+
+        <h1 class="text-xl font-bold">
+
+            Menu
+
+        </h1>
+
+
+        <button
+            onclick="viewCart()"
+            class="ml-auto text-2xl">
+
+            🛒
+
+        </button>
+
+    </header>
+
+
+    <!-- CATEGORY MENU -->
+
+    <div class="
+        p-4
+        flex
+        gap-3
+        overflow-x-auto
+        border-b
+    ">
+
+
+        <button
+            onclick="showCategory('veg', this)"
+            class="
+                category-btn
+                active
+                whitespace-nowrap
+                px-5
+                py-3
+                rounded-full
+                border
+            ">
+
+            🍕 Veg
+
+        </button>
+
+
+        <button
+            onclick="showCategory('nonveg', this)"
+            class="
+                category-btn
+                whitespace-nowrap
+                px-5
+                py-3
+                rounded-full
+                border
+            ">
+
+            🍗 Non-Veg
+
+        </button>
+
+
+        <button
+            onclick="showCategory('desserts', this)"
+            class="
+                category-btn
+                whitespace-nowrap
+                px-5
+                py-3
+                rounded-full
+                border
+            ">
+
+            🍰 Desserts
+
+        </button>
+
+
+        <button
+            onclick="showCategory('drinks', this)"
+            class="
+                category-btn
+                whitespace-nowrap
+                px-5
+                py-3
+                rounded-full
+                border
+            ">
+
+            🥤 Drinks
+
+        </button>
+
+
+        <button
+            onclick="showCategory('chinese', this)"
+            class="
+                category-btn
+                whitespace-nowrap
+                px-5
+                py-3
+                rounded-full
+                border
+            ">
+
+            🍜 Chinese
+
+        </button>
+
+    </div>
+
+
+    <!-- ITEMS -->
+
+    <main
+        id="menuItems"
+        class="
+            p-5
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-5
+        ">
+    </main>
+
+
+</div>
+
+
+<script src="menu.js"></script>
+
+</body>
+
+</html>

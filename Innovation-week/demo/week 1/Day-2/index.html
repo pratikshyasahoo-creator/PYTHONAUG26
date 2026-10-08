@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Location UI</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+    <header class="header">
+
+        <!-- Location -->
+        <div class="location-wrapper">
+
+            <button
+                id="locationButton"
+                class="location-button"
+            >
+
+                <!-- Location Icon -->
+                <svg
+                    class="location-pin"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M12 2C7.58 2 4 5.58 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.42-3.58-8-8-8zm0 11.5A3.5 3.5 0 1 1 12 6a3.5 3.5 0 0 1 0 7.5z"
+                    />
+                </svg>
+
+                <span id="locationText">
+                    No Location
+                </span>
+
+                <!-- Arrow -->
+                <svg
+                    id="arrowIcon"
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 9l6 6 6-6"
+                    />
+                </svg>
+
+            </button>
+
+
+            <!-- Required Message -->
+            <p class="required-text">
+                Exact Location Required!
+            </p>
+
+
+            <!-- Dropdown -->
+            <div
+                id="locationMenu"
+                class="location-menu hidden"
+            >
+
+                <button id="detectMenuButton">
+                    📍 Detect my location
+                </button>
+
+                <button id="manualLocationButton">
+                    Enter address manually
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Profile -->
+        <button class="profile-button">
+
+            <svg
+                class="profile-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+            >
+                <path
+                    d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"
+                />
+            </svg>
+
+        </button>
+
+    </header>
+
+
+    <!-- ==============================
+         LOCATION BANNER
+    =============================== -->
+    <section class="location-banner">
+
+        <!-- Left Side -->
+        <div class="banner-content">
+
+            <!-- Circular Icon -->
+            <div class="banner-location-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M12 2C7.58 2 4 5.58 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.42-3.58-8-8-8zm0 11.5A3.5 3.5 0 1 1 12 6a3.5 3.5 0 0 1 0 7.5z"
+                    />
+                </svg>
+
+            </div>
+
+
+            <!-- Banner Text -->
+            <div class="banner-text">
+                <div>Give us your exact location</div>
+                <div>for seamless delivery</div>
+            </div>
+
+        </div>
+
+
+        <!-- Detect Button -->
+        <button
+            id="detectLocationButton"
+            class="detect-button"
+        >
+            Detect location
+        </button>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+
+</body>
+</html>

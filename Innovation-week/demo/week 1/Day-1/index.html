@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Domino's Pizza</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dominoBlue: "#006491",
+                        dominoRed: "#e31837",
+                        dominoDark: "#005177"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="h-20 flex items-center justify-between">
+
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+
+                    <div class="logo-box">
+                        <span>🍕</span>
+                    </div>
+
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-black text-dominoBlue">
+                            Domino's
+                        </h1>
+
+                        <p class="text-xs text-gray-500">
+                            Pizza Delivery
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Location -->
+                <button
+                    onclick="openLocationModal()"
+                    class="hidden md:flex items-center gap-3 location-button"
+                >
+
+                    <span class="text-2xl text-dominoRed">
+                        📍
+                    </span>
+
+                    <div class="text-left">
+
+                        <p
+                            id="headerLocation"
+                            class="font-bold text-dominoRed"
+                        >
+                            No Location
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Exact Location Required!
+                        </p>
+
+                    </div>
+
+                    <span>⌄</span>
+
+                </button>
+
+
+                <!-- Search -->
+                <div class="hidden lg:block relative w-80">
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search pizzas..."
+                        oninput="searchProducts()"
+                        class="w-full border border-gray-300 rounded-full px-5 py-3 pr-12 outline-none focus:ring-2 focus:ring-dominoBlue"
+                    >
+
+                    <span class="absolute right-4 top-3">
+                        🔍
+                    </span>
+
+                </div>
+
+
+                <!-- Account / Cart -->
+                <div class="flex items-center gap-4">
+
+                    <button
+                        onclick="showToast('Login feature coming soon')"
+                        class="hidden sm:block text-2xl"
+                    >
+                        👤
+                    </button>
+
+                    <button
+                        onclick="openCart()"
+                        class="relative bg-dominoBlue text-white px-4 md:px-6 py-3 rounded-lg font-bold"
+                    >
+
+                        🛒
+
+                        <span class="hidden sm:inline">
+                            Cart
+                        </span>
+
+                        <span
+                            id="cartCount"
+                            class="cart-count"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Mobile location -->
+
+            <button
+                onclick="openLocationModal()"
+                class="md:hidden w-full flex items-center gap-3 py-3 border-t"
+            >
+
+                <span class="text-dominoRed">
+                    📍
+                </span>
+
+                <div class="text-left">
+
+                    <p
+                        id="mobileLocation"
+                        class="font-bold text-dominoRed"
+                    >
+                        No Location
+                    </p>
+
+                    <p class="text-xs text-gray-500">
+                        Exact Location Required!
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         LOCATION BANNER
+    ====================================================== -->
+
+    <section class="bg-dominoBlue text-white">
+
+        <div class="max-w-7xl mx-auto px-4 py-4">
+
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-4">
+
+                    <div class="location-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <p class="font-bold">
+                            Give us your exact location
+                        </p>
+
+                        <p class="font-bold">
+                            for seamless delivery
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    onclick="detectLocation()"
+                    class="border border-white px-5 py-2 rounded-lg font-bold hover:bg-white hover:text-dominoBlue transition"
+                >
+                    Detect location
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ORDER TYPE
+    ====================================================== -->
+
+    <section class="max-w-7xl mx-auto px-4 mt-6">
+
+        <div class="grid grid-cols-3 bg-white rounded-lg border overflow-hidden">
+
+            <button
+                id="deliveryBtn"
+                onclick="setOrderMode('Delivery')"
+                class="order-mode active"
+            >
+
+                Delivery
+                <br>
+
+                <span>
+                    NOW
+                </span>
+
+            </button>
+
+
+            <button
+                id="takeawayBtn"
+                onclick="setOrderMode('Takeaway')"
+                class="order-mode"
+            >
+
+                Takeaway
+                <br>
+
+                <span>
+                    Select Store
+                </span>
+
+            </button>
+
+
+            <button
+                id="dineinBtn"
+                onclick="setOrderMode('Dine-in')"
+                class="order-mode"
+            >
+
+                Dine-in
+                <br>
+
+                <span>
+                    Select Store
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="max-w-7xl mx-auto px-4">
+
+
+        <!-- =================================================
+             OFFERS
+        ================================================== -->
+
+        <section class="mt-7">
+
+            <h2 class="section-title">
+                Offers for you
+            </h2>
+
+
+            <div
+                onclick="applyCoupon()"
+                class="offer-card"
+            >
+
+                <div>
+
+                    <h3>
+                        🎟️ Get ₹30 OFF
+                    </h3>
+
+                    <p>
+                        Up to ₹30 Off on orders of ₹199 or more
+                    </p>
+
+                </div>
+
+
+                <button>
+                    View
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIES
+        ================================================== -->
+
+        <section class="mt-10">
+
+            <h2 class="section-title">
+                What are you craving for?
+            </h2>
+
+
+            <div
+                id="categoryContainer"
+                class="category-container"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHAT'S NEW
+        ================================================== -->
+
+        <section class="mt-10">
+
+            <h2 class="section-title">
+                What's New
+            </h2>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div class="new-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=80"
+                        alt="Pizza"
+                    >
+
+                    <div>
+                        <h3>
+                            New Cheese Burst
+                        </h3>
+
+                        <p>
+                            Try our delicious new pizza flavours.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="new-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1593560708920-61dd98c8c6e7?auto=format&fit=crop&w=1000&q=80"
+                        alt="Pizza"
+                    >
+
+                    <div>
+                        <h3>
+                            Cheese Mania
+                        </h3>
+
+                        <p>
+                            More cheese. More happiness.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="new-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80"
+                        alt="Pizza"
+                    >
+
+                    <div>
+                        <h3>
+                            Crazy Deals
+                        </h3>
+
+                        <p>
+                            Delicious deals at amazing prices.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section class="mt-12 pb-20">
+
+            <div class="flex justify-between items-center mb-6">
+
+                <h2 class="section-title mb-0">
+                    Popular Pizzas
+                </h2>
+
+                <span
+                    id="productResult"
+                    class="text-gray-500 text-sm"
+                ></span>
+
+            </div>
+
+
+            <div
+                id="productContainer"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         LOCATION MODAL
+    ====================================================== -->
+
+    <div
+        id="locationModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-box">
+
+            <div class="flex justify-between items-center mb-6">
+
+                <h2 class="text-xl font-black">
+                    Select Location
+                </h2>
+
+                <button
+                    onclick="closeLocationModal()"
+                    class="text-3xl"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <button
+                onclick="detectLocation()"
+                class="w-full bg-dominoBlue text-white py-3 rounded-lg font-bold"
+            >
+                📍 Detect My Location
+            </button>
+
+
+            <div class="text-center text-gray-400 my-5">
+                OR
+            </div>
+
+
+            <input
+                id="locationInput"
+                type="text"
+                placeholder="Enter your location"
+                class="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-dominoBlue"
+            >
+
+
+            <button
+                onclick="saveLocation()"
+                class="w-full bg-dominoRed text-white py-3 rounded-lg font-bold mt-4"
+            >
+                Save Location
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CART OVERLAY
+    ====================================================== -->
+
+    <div
+        id="cartOverlay"
+        onclick="closeCart()"
+        class="hidden fixed inset-0 bg-black/50 z-40"
+    ></div>
+
+
+    <!-- =====================================================
+         CART DRAWER
+    ====================================================== -->
+
+    <aside
+        id="cartDrawer"
+        class="cart-drawer"
+    >
+
+        <div class="p-5 border-b flex justify-between items-center">
+
+            <div>
+
+                <h2 class="text-2xl font-black">
+                    Your Cart
+                </h2>
+
+                <p class="text-sm text-gray-500">
+                    Deliciousness is on its way!
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeCart()"
+                class="text-3xl"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="cartItems"
+            class="flex-1 overflow-y-auto p-5"
+        >
+        </div>
+
+
+        <div class="border-t p-5">
+
+            <div class="flex justify-between mb-2">
+                <span>Subtotal</span>
+                <span id="subtotal">
+                    ₹0
+                </span>
+            </div>
+
+
+            <div class="flex justify-between mb-2">
+                <span>Discount</span>
+
+                <span
+                    id="discount"
+                    class="text-green-600"
+                >
+                    -₹0
+                </span>
+
+            </div>
+
+
+            <div class="flex justify-between text-xl font-black mb-4">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="total">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="checkout()"
+                class="w-full bg-dominoRed text-white py-4 rounded-lg font-black"
+            >
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast hidden"
+    ></div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

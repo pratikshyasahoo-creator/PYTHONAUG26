@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Domino's</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #071120;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .app {
+
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            margin: auto;
+            background: white;
+
+        }
+
+        @media (min-width: 480px) {
+            .app {
+                max-width: 480px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .app {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .app {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .app {
+                max-width: 800px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <header class="
+        h-[65px]
+        bg-[#071120]
+        text-white
+        flex
+        items-center
+        px-5
+        gap-4
+    ">
+
+        <button
+            onclick="goBack()"
+            class="text-2xl">
+
+            ←
+
+        </button>
+
+
+        <h1
+            id="pageTitle"
+            class="text-xl font-bold">
+
+            Domino's
+
+        </h1>
+
+    </header>
+
+
+    <main
+        id="content"
+        class="p-5">
+
+    </main>
+
+
+</div>
+
+
+<script src="option.js"></script>
+
+</body>
+
+</html>

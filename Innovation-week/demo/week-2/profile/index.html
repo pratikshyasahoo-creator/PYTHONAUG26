@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #071120;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Responsive maximum width */
+
+        .profile-app {
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            margin: auto;
+            background: white;
+        }
+
+        @media (min-width: 480px) {
+            .profile-app {
+                max-width: 480px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .profile-app {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .profile-app {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .profile-app {
+                max-width: 800px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .profile-app {
+                max-width: 900px;
+            }
+        }
+
+        .profile-option {
+            transition: 0.2s;
+        }
+
+        .profile-option:hover {
+            background: #f3f3f3;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="profile-app">
+
+
+    <!-- PROFILE HEADER -->
+
+    <div class="px-6 py-8">
+
+        <div class="flex items-center gap-4">
+
+
+            <!-- Profile icon -->
+
+            <div class="
+                w-16
+                h-16
+                rounded-full
+                bg-gray-500
+                flex
+                items-center
+                justify-center
+                flex-shrink-0
+            ">
+
+                <span class="text-3xl">
+                    👤
+                </span>
+
+            </div>
+
+
+            <!-- User information -->
+
+            <div class="flex-1">
+
+                <p id="profileName"
+                   class="text-lg font-bold">
+
+                    Login for ••••
+
+                </p>
+
+                <p class="text-lg text-gray-700">
+
+                    Free Pizza rewards
+
+                </p>
+
+            </div>
+
+
+            <!-- Login -->
+
+            <button
+                id="loginButton"
+                onclick="loginLogout()"
+                class="
+                    bg-[#e31837]
+                    text-white
+                    font-bold
+                    px-5
+                    py-3
+                    rounded-xl
+                ">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MENU ================= -->
+
+    <div class="border-t">
+
+
+        <button
+            onclick="goToMenu()"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🧾
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Menu
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('deals')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🎟️
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Deals & Offers
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('train')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🚆
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Deliver On Train
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= REWARDS ================= -->
+
+    <div class="border-t">
+
+        <button
+            onclick="openOption('rewards')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🎁
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Domino's Rewards
+            </span>
+
+            <span class="
+                ml-auto
+                bg-sky-500
+                text-white
+                text-xs
+                px-3
+                py-1
+                rounded-full
+            ">
+
+                New
+
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('track')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                📍
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Track Order
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('history')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🍕
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Order History
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('wallet')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                👛
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Domino's Wallet
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= BULK ================= -->
+
+    <div class="border-t">
+
+        <button
+            onclick="openOption('bulk')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🍕
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Bulk Order
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= INFORMATION ================= -->
+
+    <div class="border-t">
+
+
+        <button
+            onclick="openOption('nutrition')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🍱
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Nutritional Information
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('terms')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                📜
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Terms & Conditions
+            </span>
+
+        </button>
+
+
+        <button
+            onclick="openOption('contact')"
+            class="
+                profile-option
+                w-full
+                flex
+                items-center
+                px-8
+                py-5
+                gap-6
+            ">
+
+            <span class="text-3xl w-10 text-center">
+                🎧
+            </span>
+
+            <span class="text-xl text-gray-600">
+                Contact Us
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- VERSION -->
+
+    <div class="px-8 py-8 text-right">
+
+        <span class="text-gray-500">
+            v12.3.11
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<!-- LOGIN POPUP -->
+
+<div
+    id="loginModal"
+    class="
+        hidden
+        fixed
+        inset-0
+        bg-black/60
+        z-50
+        flex
+        items-center
+        justify-center
+        p-5
+    ">
+
+
+    <div class="
+        bg-white
+        rounded-2xl
+        p-6
+        w-full
+        max-w-[400px]
+    ">
+
+
+        <div class="
+            flex
+            justify-between
+            items-center
+        ">
+
+            <h2 class="text-2xl font-bold">
+                Login
+            </h2>
+
+
+            <button
+                onclick="closeLogin()"
+                class="text-xl">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <input
+            id="userName"
+            type="text"
+            placeholder="Enter your name"
+            class="
+                w-full
+                border
+                rounded-lg
+                p-3
+                mt-6
+            ">
+
+
+        <input
+            id="userPhone"
+            type="tel"
+            maxlength="10"
+            placeholder="Enter mobile number"
+            class="
+                w-full
+                border
+                rounded-lg
+                p-3
+                mt-3
+            ">
+
+
+        <button
+            onclick="loginUser()"
+            class="
+                w-full
+                bg-[#e31837]
+                text-white
+                p-3
+                rounded-lg
+                mt-5
+                font-bold
+            ">
+
+            Login
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@ async function getData() {
   let response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await response.json();
 
-  // console.log(users);
+  // console.log(posts);
   posts.map((post) => {
     let postCard = document.createElement("div");
     postCard.style.cssText =
