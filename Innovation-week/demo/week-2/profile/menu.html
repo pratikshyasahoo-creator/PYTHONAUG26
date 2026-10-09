@@ -8,10 +8,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Menu</title>
+    <title>Food Menu</title>
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
 
     <style>
 
@@ -21,67 +21,550 @@
 
         body {
             margin: 0;
-            background: #071120;
+            background: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .menu-app {
+        /* ===============================
+           MAIN MENU CONTAINER
+        =============================== */
 
+        .menu-container {
             width: 100%;
-            max-width: 430px;
-            min-height: 100vh;
+            /* max-width: 1600px;    */
             margin: auto;
+        }
+
+
+        /* ===============================
+           CATEGORY BAR
+        =============================== */
+
+        .category-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #ddd;
             background: white;
 
+            scrollbar-width: thin;
         }
 
-        @media (min-width: 480px) {
 
-            .menu-app {
-                max-width: 480px;
-            }
-
+        .category-wrapper::-webkit-scrollbar {
+            height: 8px;
         }
 
-        @media (min-width: 640px) {
 
-            .menu-app {
-                max-width: 640px;
-            }
-
+        .category-wrapper::-webkit-scrollbar-track {
+            background: #eeeeee;
         }
 
-        @media (min-width: 768px) {
 
-            .menu-app {
-                max-width: 768px;
-            }
-
+        .category-wrapper::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
         }
 
-        @media (min-width: 1024px) {
 
-            .menu-app {
-                max-width: 1000px;
-            }
-
+        .category-list {
+            display: flex;
+            width: max-content;
+            min-width: 100%;
         }
 
-        @media (min-width: 1280px) {
-
-            .menu-app {
-                max-width: 1200px;
-            }
-
-        }
 
         .category-btn {
+            position: relative;
+            padding: 20px 20px;
+            font-size: 17px;
+            color: #333;
+            background: transparent;
+            border: none;
+            cursor: pointer;
             transition: 0.2s;
         }
 
+
+        .category-btn:hover {
+            color: #e31837;
+        }
+
+
         .category-btn.active {
+            font-weight: 700;
+            color: #222;
+        }
+
+
+        .category-btn.active::after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 0;
+
+            height: 5px;
+
             background: #e31837;
+            border-radius: 5px 5px 0 0;
+        }
+
+
+        /* ===============================
+           SECTION TITLE
+        =============================== */
+
+        .section-title {
+            text-align: center;
+            font-size: 27px;
+            font-weight: 700;
+            color: #555;
+            padding: 15px 0 25px;
+        }
+
+
+        /* ===============================
+           PRODUCT GRID
+        =============================== */
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 22px;
+
+            padding: 0 20px 40px;
+
+        }
+
+
+        /* ===============================
+           PRODUCT CARD
+        =============================== */
+
+        .product-card {
+
+            position: relative;
+
+            height: 520px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background: #111;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.2);
+
+            transition: 0.25s;
+
+        }
+
+
+        .product-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        /* ===============================
+           PRODUCT IMAGE
+        =============================== */
+
+        .product-image {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        /* ===============================
+           DARK GRADIENT
+        =============================== */
+
+        .image-gradient {
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            height: 58%;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.92)
+                );
+
+        }
+
+
+        /* ===============================
+           POPULAR BADGE
+        =============================== */
+
+        .popular-badge {
+
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+
+            background: #101010;
+
+            color: #00ffff;
+
+            padding: 6px 9px;
+
+            border-radius: 4px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* ===============================
+           PRODUCT INFORMATION
+        =============================== */
+
+        .product-info {
+
+            position: absolute;
+
+            left: 18px;
+            right: 18px;
+            bottom: 0;
+
             color: white;
+
+        }
+
+
+        .food-name {
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+
+            line-height: 1.2;
+
+        }
+
+
+        .food-description {
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            color: #eeeeee;
+
+            min-height: 52px;
+
+        }
+
+
+        /* ===============================
+           FOOD TYPE
+        =============================== */
+
+        .food-type {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            margin-right: 5px;
+
+        }
+
+
+        .veg-icon {
+
+            width: 20px;
+            height: 20px;
+
+            border: 2px solid #00a650;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 3px;
+
+        }
+
+
+        .veg-icon::after {
+
+            content: "";
+
+            width: 9px;
+            height: 9px;
+
+            background: #00a650;
+
+            border-radius: 50%;
+
+        }
+
+
+        .nonveg-icon {
+
+            width: 20px;
+            height: 20px;
+
+            border: 2px solid #b40000;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 3px;
+
+        }
+
+
+        .nonveg-icon::after {
+
+            content: "";
+
+            width: 9px;
+            height: 9px;
+
+            background: #b40000;
+
+            border-radius: 50%;
+
+        }
+
+
+        /* ===============================
+           BOTTOM BAR
+        =============================== */
+
+        .product-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-top: 1px dotted #aaa;
+
+            margin-top: 15px;
+
+            padding: 18px 0;
+
+        }
+
+
+        .price-section {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+        }
+
+
+        .price {
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+        }
+
+
+        .size {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* ===============================
+           ORDER BUTTON
+        =============================== */
+
+        .order-btn {
+
+            border: none;
+
+            background: #e31837;
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            padding: 15px 28px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .order-btn:hover {
+
+            background: #c91430;
+
+            transform: scale(1.03);
+
+        }
+
+
+        /* ===============================
+           CART BUTTON
+        =============================== */
+
+        .cart-button {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 100;
+
+            background: #e31837;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 50px;
+
+            padding: 15px 22px;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.3);
+
+            cursor: pointer;
+
+        }
+
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media (max-width: 1100px) {
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+
+                padding: 0 12px 30px;
+
+            }
+
+
+            .product-card {
+
+                height: 480px;
+
+            }
+
+
+            .category-btn {
+
+                padding: 17px 14px;
+
+                font-size: 15px;
+
+            }
+
+
+            .food-name {
+
+                font-size: 23px;
+
+            }
+
+
+            .food-description {
+
+                font-size: 14px;
+
+            }
+
+
+            .order-btn {
+
+                font-size: 18px;
+
+                padding: 12px 20px;
+
+            }
+
+        }
+
+
+        @media (min-width: 1500px) {
+
+            .product-grid {
+
+                gap: 28px;
+
+                padding-left: 25px;
+
+                padding-right: 25px;
+
+            }
+
         }
 
     </style>
@@ -92,161 +575,67 @@
 <body>
 
 
-<div class="menu-app">
+<div class="menu-container">
 
 
-    <!-- HEADER -->
+    <!-- ==================================
+         CATEGORY NAVIGATION
+    =================================== -->
 
-    <header class="
-        h-[65px]
-        bg-[#071120]
-        text-white
-        flex
-        items-center
-        px-5
-        gap-4
-    ">
+    <div class="category-wrapper">
 
-        <button
-            onclick="goBack()"
-            class="text-2xl">
-
-            ←
-
-        </button>
-
-
-        <h1 class="text-xl font-bold">
-
-            Menu
-
-        </h1>
-
-
-        <button
-            onclick="viewCart()"
-            class="ml-auto text-2xl">
-
-            🛒
-
-        </button>
-
-    </header>
-
-
-    <!-- CATEGORY MENU -->
-
-    <div class="
-        p-4
-        flex
-        gap-3
-        overflow-x-auto
-        border-b
-    ">
-
-
-        <button
-            onclick="showCategory('veg', this)"
-            class="
-                category-btn
-                active
-                whitespace-nowrap
-                px-5
-                py-3
-                rounded-full
-                border
-            ">
-
-            🍕 Veg
-
-        </button>
-
-
-        <button
-            onclick="showCategory('nonveg', this)"
-            class="
-                category-btn
-                whitespace-nowrap
-                px-5
-                py-3
-                rounded-full
-                border
-            ">
-
-            🍗 Non-Veg
-
-        </button>
-
-
-        <button
-            onclick="showCategory('desserts', this)"
-            class="
-                category-btn
-                whitespace-nowrap
-                px-5
-                py-3
-                rounded-full
-                border
-            ">
-
-            🍰 Desserts
-
-        </button>
-
-
-        <button
-            onclick="showCategory('drinks', this)"
-            class="
-                category-btn
-                whitespace-nowrap
-                px-5
-                py-3
-                rounded-full
-                border
-            ">
-
-            🥤 Drinks
-
-        </button>
-
-
-        <button
-            onclick="showCategory('chinese', this)"
-            class="
-                category-btn
-                whitespace-nowrap
-                px-5
-                py-3
-                rounded-full
-                border
-            ">
-
-            🍜 Chinese
-
-        </button>
+        <div
+            id="categoryList"
+            class="category-list">
+        </div>
 
     </div>
 
 
-    <!-- ITEMS -->
+    <!-- ==================================
+         TITLE
+    =================================== -->
 
-    <main
-        id="menuItems"
-        class="
-            p-5
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            gap-5
-        ">
-    </main>
+    <h1
+        id="sectionTitle"
+        class="section-title">
+
+        Recommended
+
+    </h1>
+
+
+    <!-- ==================================
+         PRODUCT GRID
+    =================================== -->
+
+    <div
+        id="productGrid"
+        class="product-grid">
+    </div>
 
 
 </div>
 
 
+<!-- ==================================
+     CART BUTTON
+=================================== -->
+
+<button
+    onclick="openCart()"
+    class="cart-button">
+
+    🛒 Cart
+    <span id="cartCount">0</span>
+
+</button>
+
+
+<!-- JAVASCRIPT -->
+
 <script src="menu.js"></script>
+
 
 </body>
 

@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Domino's</title>
 
@@ -14,7 +13,6 @@
 
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -28,14 +26,13 @@
         .app {
 
             width: 100%;
-            max-width: 430px;
             min-height: 100vh;
             margin: auto;
             background: white;
 
         }
 
-        @media (min-width: 480px) {
+        /* @media (min-width: 480px) {
             .app {
                 max-width: 480px;
             }
@@ -57,20 +54,15 @@
             .app {
                 max-width: 800px;
             }
-        }
-
+        } */
     </style>
 
 </head>
 
 
 <body>
-
-
-<div class="app">
-
-
-    <header class="
+    <div class="app">
+        <header class="
         h-[65px]
         bg-[#071120]
         text-white
@@ -79,38 +71,26 @@
         px-5
         gap-4
     ">
+            <button onclick="goBack()" class="text-2xl">
+                ←
+            </button>
+            <h1 id="pageTitle" class="text-2xl font-bold">
+                Domino's
 
-        <button
-            onclick="goBack()"
-            class="text-2xl">
+            </h1>
 
-            ←
-
-        </button>
-
-
-        <h1
-            id="pageTitle"
-            class="text-xl font-bold">
-
-            Domino's
-
-        </h1>
-
-    </header>
+        </header>
 
 
-    <main
-        id="content"
-        class="p-5">
+        <main id="content" class="p-5">
 
-    </main>
+        </main>
 
 
-</div>
+    </div>
 
 
-<script src="option.js"></script>
+    <script src="option.js"></script>
 
 </body>
 
