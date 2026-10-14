@@ -1,21 +1,24 @@
 import About from './About'
 import './App.css'
-import Home from "./Home";
+import Home from './Home'
+import Product from './Product'
 
 function App() {
 
-  let a = 10;
+  let a=10;
+
   return (
-    <div>hello
+    <div>
+      Hello
 
       <div>
-        welcome!
-        </div>
+        Welcome
+      </div>
 
-      <Home v={a} str={"Hello, world!"} arr={[1, 2, 3]} obj={{ name: "John", age: 30 }} />
-      <About />
+      <Home v={a}  str={"this is my string"} arr={[1,2,3]} obj={{name:'xyz',age:40}}/>
+      <About/>
+      <Product product_title={"Smart TV"} description={"Samsung Smart TV with 4K Ultra HD and 55-inch display"} price={45000}/>
     </div>
-    
   )
 }
 
