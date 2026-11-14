@@ -119,9 +119,9 @@ for i in range(1, 21, 2):
     print(i)
     i += 2
 #5. Print the multiplication table of any number.
-num = 5
+num = int(input("Enter a number: "))
 for i in range(1, 11):
-    print(num * i)
+    print(num, "x", i, "=", num * i)
 #6. Print numbers from 5 to 25 with a step of 5.
 for i in range(5, 26, 5):
     print(i)
@@ -151,3 +151,4 @@ for i in range(1, 6):
 for i in range(1, 6):
     print("*" * i)
     
+   
